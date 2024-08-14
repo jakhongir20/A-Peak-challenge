@@ -1,11 +1,10 @@
-import { Button } from "./components/ui/button";
+import { DarkModeProvider } from './context';
+import Home from './pages/Home';
 
-function App() {
+export default function App() {
   return (
-    <div>
-      <Button>Open Modal</Button>
-    </div>
+    <DarkModeProvider>
+      <Home />
+    </DarkModeProvider>
   );
 }
-
-export default App;
