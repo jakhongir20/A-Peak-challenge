@@ -4,6 +4,7 @@
     { "path": "./tsconfig.app.json" },
     { "path": "./tsconfig.node.json" }
   ],
+  // "include": ["src/**/*.ts", "src/**/*.tsx", "vitest.config.ts"],
   "compilerOptions": {
     "baseUrl": ".",
     "paths": {
