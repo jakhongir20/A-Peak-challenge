@@ -53,9 +53,8 @@ export const InputGroup: React.FC<Props> = ({
   return (
     <div
       className={cn(
-        'flex',
-        horizontal ? 'justify-between w-full' : 'flex-col ',
-        className
+        horizontal ? 'justify-between w-full' : 'flex-col',
+        'flex space-y-1.5'
       )}
     >
       {showLabel && (

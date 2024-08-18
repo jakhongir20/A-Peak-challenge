@@ -43,9 +43,8 @@ export const SelectGroup: React.FC<Props> = ({
   return (
     <div
       className={cn(
-        'flex',
-        horizontal ? 'justify-between w-full' : 'flex-col ',
-        className
+        horizontal ? 'justify-between w-full' : 'flex-col',
+        'flex space-y-1.5'
       )}
     >
       {showLabel && (
@@ -55,7 +54,11 @@ export const SelectGroup: React.FC<Props> = ({
       )}
       <Select>
         <SelectTrigger style={{ ...style }} id={name}>
-          <SelectValue placeholder={placeholder} onChange={onChange} />
+          <SelectValue
+            placeholder={placeholder}
+            className={className}
+            onChange={onChange}
+          />
         </SelectTrigger>
         <SelectContent position={position}>
           {options.length > 0
