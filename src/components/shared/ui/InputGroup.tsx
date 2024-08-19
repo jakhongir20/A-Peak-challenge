@@ -1,8 +1,8 @@
 /* eslint-disable @typescript-eslint/no-unused-vars */
 import React, { ChangeEventHandler, useEffect, useRef, useState } from 'react';
-import { cn } from '../../lib/utils';
-import { Input } from '../ui/input';
-import { Label } from '../ui/label';
+import { cn } from '../../../lib/utils';
+import { Input } from '../../ui/input';
+import { Label } from '../../ui/label';
 
 interface Props {
   className?: string;
@@ -58,7 +58,13 @@ export const InputGroup: React.FC<Props> = ({
       )}
     >
       {showLabel && (
-        <Label htmlFor={name} className={cn(horizontal ? 'mt-1' : '')}>
+        <Label
+          htmlFor={name}
+          className={cn(
+            horizontal ? 'mt-1' : '',
+            'font-medium text-sm text-[#344054]'
+          )}
+        >
           {labelText}
         </Label>
       )}
@@ -68,21 +74,25 @@ export const InputGroup: React.FC<Props> = ({
           placeholder={placeholder}
           style={{
             paddingLeft: prefix
-              ? `${prefixWidth + (prefixWithLine ? 10 : 0)}px`
-              : '10px',
+              ? `${prefixWidth + (prefixWithLine ? 14 : 0)}px`
+              : '14px',
             paddingRight: suffix
-              ? `${suffixWidth + (suffixWithLine ? 10 : 0)}px`
-              : '10px',
+              ? `${suffixWidth + (suffixWithLine ? 14 : 0)}px`
+              : '14px',
             ...style,
           }}
-          className={cn(horizontal ? 'ml-3' : '', className)}
+          className={cn(
+            horizontal ? '' : '',
+            'h-11 text-base placeholder:text-[#667085] placeholder:text-base placeholder:font-normal',
+            className
+          )}
           onChange={onChange}
         />
         {prefix && (
           <span
             ref={prefixRef}
             className={cn(
-              'flex items-center px-3 h-full text-gray-500 space-x-2 absolute left-0 top-0 bottom-0',
+              'flex items-center pl-[14px] pr-2 h-full text-[#475467] text-base absolute left-0 top-0 bottom-0',
               prefixWithLine ? 'border-r' : ''
             )}
           >
@@ -93,7 +103,7 @@ export const InputGroup: React.FC<Props> = ({
           <span
             ref={suffixRef}
             className={cn(
-              'flex items-center px-3 h-full text-gray-500 space-x-2 absolute right-0 top-0 bottom-0',
+              'flex items-center pl-[14px] pr-3 h-full text-gray-500 absolute right-0 top-0 bottom-0',
               suffixWithLine ? 'border-l' : ''
             )}
           >

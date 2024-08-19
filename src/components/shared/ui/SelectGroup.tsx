@@ -1,14 +1,14 @@
 /* eslint-disable @typescript-eslint/no-unused-vars */
 import React, { ChangeEventHandler } from 'react';
-import { cn } from '../../lib/utils';
-import { Label } from '../ui/label';
+import { cn } from '../../../lib/utils';
+import { Label } from '../../ui/label';
 import {
   Select,
   SelectContent,
   SelectItem,
   SelectTrigger,
   SelectValue,
-} from '../ui/select';
+} from '../../ui/select';
 
 type SelectOption = {
   value: string;
@@ -48,17 +48,26 @@ export const SelectGroup: React.FC<Props> = ({
       )}
     >
       {showLabel && (
-        <Label htmlFor={name} className={cn(horizontal ? 'mt-1' : '')}>
+        <Label
+          htmlFor={name}
+          className={cn(
+            horizontal ? 'mt-1' : '',
+            'font-medium text-sm text-[#344054]'
+          )}
+        >
           {labelText}
         </Label>
       )}
       <Select>
-        <SelectTrigger style={{ ...style }} id={name}>
-          <SelectValue
-            placeholder={placeholder}
-            className={className}
-            onChange={onChange}
-          />
+        <SelectTrigger
+          style={{ ...style }}
+          id={name}
+          className={cn(
+            'h-11 text-base text-[#101828] placeholder:text-[#667085] placeholder:text-base placeholder:font-normal',
+            className
+          )}
+        >
+          <SelectValue placeholder={placeholder} onChange={onChange} />
         </SelectTrigger>
         <SelectContent position={position}>
           {options.length > 0

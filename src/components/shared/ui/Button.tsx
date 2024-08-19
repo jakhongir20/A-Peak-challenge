@@ -1,6 +1,6 @@
 import React from 'react';
-import { cn } from '../../lib/utils';
-import { Button as ButtonUI } from '../ui';
+import { cn } from '../../../lib/utils';
+import { Button as ButtonUI } from '../../ui';
 
 interface Props {
   className?: string;
