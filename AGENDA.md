@@ -1,15 +1,10 @@
-# CONNECTA-METALOGISTICS CRM
-
-## Monorepo
+# Modal Form UI
 
 ## Frontend: react, ts
 
-## Dockerize app, docker compose for services, configure CI (github)
-
 ## Features
 
-- Authentication: access/refresh token, user roles: admin, analitc, user
-- Leads, Users, Settings, etc
+- Form: Input, Textarea, Select, Button
 
 # step-1
 
@@ -24,3 +19,4 @@
 # step-2
 
 - Dockerize app
+- Store to Github
