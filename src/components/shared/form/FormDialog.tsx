@@ -96,6 +96,8 @@ export const FormDialog: React.FC<Props> = ({
         }
         setTimeout(() => setStep(1), 200);
       }}
+      aria-labelledby="dialog-title"
+      aria-describedby="dialog-description"
     >
       <DialogContent
         className={cn('sm:max-w-[640px] p-4 sm:p-6 overflow-hidden', className)}

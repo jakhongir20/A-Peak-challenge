@@ -55,11 +55,15 @@ export const TextareaGroup: React.FC<Props> = ({
           {labelTooltipIcon && labelTooltipText && (
             <TooltipProvider>
               <Tooltip>
-                <TooltipTrigger onClick={(e) => e.preventDefault()}>
+                <TooltipTrigger
+                  tabIndex={0}
+                  aria-label={`${labelText} tooltip`}
+                  onClick={(e) => e.preventDefault()}
+                >
                   {labelTooltipIcon}
                 </TooltipTrigger>
                 <TooltipContent>
-                  <p>{labelTooltipText}</p>
+                  <p id={`${name}-tooltip`}>{labelTooltipText}</p>
                 </TooltipContent>
               </Tooltip>
             </TooltipProvider>
@@ -70,6 +74,7 @@ export const TextareaGroup: React.FC<Props> = ({
         placeholder={placeholder}
         id={name}
         style={{ ...style, height: 118 }}
+        aria-describedby={labelTooltipText ? `${name}-tooltip` : undefined}
         value={value}
         className={cn(
           'h-11 text-base text-[#101828] placeholder:text-[#667085] placeholder:text-base placeholder:font-normal',

@@ -70,6 +70,10 @@ export const InputGroup: React.FC<Props> = ({
         <Input
           id={name}
           placeholder={placeholder}
+          aria-labelledby={name}
+          aria-describedby={prefix ? `${name}-prefix` : undefined}
+          aria-invalid={false}
+          aria-required={true}
           style={{
             paddingLeft: prefix
               ? `${prefixWidth + (prefixWithLine ? 14 : 0)}px`
@@ -88,6 +92,7 @@ export const InputGroup: React.FC<Props> = ({
         />
         {prefix && (
           <span
+            id={`${name}-prefix`}
             ref={prefixRef}
             className={cn(
               'flex items-center pl-[14px] pr-2 h-full text-[#475467] text-base absolute left-0 top-0 bottom-0',
@@ -99,6 +104,7 @@ export const InputGroup: React.FC<Props> = ({
         )}
         {suffix && (
           <span
+            id={`${name}-suffix`}
             ref={suffixRef}
             className={cn(
               'flex items-center pl-[14px] pr-3 h-full text-gray-500 absolute right-0 top-0 bottom-0',

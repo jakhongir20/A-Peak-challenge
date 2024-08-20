@@ -55,7 +55,7 @@ export const SelectGroup: React.FC<Props> = ({
           {labelText}
         </Label>
       )}
-      <Select>
+      <Select aria-labelledby={name} aria-describedby={`${name}-description`}>
         <SelectTrigger
           style={{ ...style }}
           id={name}
@@ -71,13 +71,15 @@ export const SelectGroup: React.FC<Props> = ({
           />
         </SelectTrigger>
         <SelectContent position={position}>
-          {options.length > 0
-            ? options.map((option: SelectOption) => (
-                <SelectItem key={option.value} value={option.value}>
-                  {option.label}
-                </SelectItem>
-              ))
-            : 'No data'}
+          {options.length > 0 ? (
+            options.map((option: SelectOption) => (
+              <SelectItem key={option.value} value={option.value}>
+                {option.label}
+              </SelectItem>
+            ))
+          ) : (
+            <div role="alert">No data available</div>
+          )}
         </SelectContent>
       </Select>
     </div>
