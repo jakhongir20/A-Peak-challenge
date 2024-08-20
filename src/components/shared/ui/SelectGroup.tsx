@@ -1,19 +1,14 @@
-/* eslint-disable @typescript-eslint/no-unused-vars */
-import React, { ChangeEventHandler } from 'react';
-import { cn } from '../../../lib/utils';
-import { Label } from '../../ui/label';
 import {
+  Label,
   Select,
   SelectContent,
   SelectItem,
   SelectTrigger,
   SelectValue,
-} from '../../ui/select';
-
-type SelectOption = {
-  value: string;
-  label: string;
-};
+} from '@/components/ui';
+import { SelectOption } from '@/lib/constants';
+import { cn } from '@/lib/utils';
+import React, { ChangeEventHandler } from 'react';
 
 interface Props {
   className?: string;
@@ -24,6 +19,7 @@ interface Props {
   placeholder?: string;
   style?: object;
   position?: 'popper';
+  value: SelectOption['value'];
   options: SelectOption[];
   onChange?: ChangeEventHandler<HTMLSelectElement>;
 }
@@ -38,6 +34,7 @@ export const SelectGroup: React.FC<Props> = ({
   style,
   position = 'popper',
   options = [],
+  value,
   onChange,
 }) => {
   return (
@@ -67,7 +64,11 @@ export const SelectGroup: React.FC<Props> = ({
             className
           )}
         >
-          <SelectValue placeholder={placeholder} onChange={onChange} />
+          <SelectValue
+            defaultValue={value}
+            placeholder={placeholder}
+            onChange={onChange}
+          />
         </SelectTrigger>
         <SelectContent position={position}>
           {options.length > 0

@@ -1,13 +1,13 @@
-import React, { ChangeEventHandler } from 'react';
-import { cn } from '../../../lib/utils';
-import { Label } from '../../ui/label';
-import { Textarea } from '../../ui/textarea';
+import { Label } from '@/components/ui/label';
+import { Textarea } from '@/components/ui/textarea';
 import {
   Tooltip,
   TooltipContent,
   TooltipProvider,
   TooltipTrigger,
-} from '../../ui/tooltip';
+} from '@/components/ui/tooltip';
+import { cn } from '@/lib/utils';
+import React, { ChangeEventHandler } from 'react';
 
 interface Props {
   className?: string;

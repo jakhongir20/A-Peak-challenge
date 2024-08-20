@@ -1,1 +1,1 @@
-export { InputGroup } from './ui/InputGroup';
+export { HelpIcon } from './HelpIcon';

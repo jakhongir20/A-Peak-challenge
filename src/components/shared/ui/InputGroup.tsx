@@ -1,8 +1,8 @@
 /* eslint-disable @typescript-eslint/no-unused-vars */
+import { Input } from '@/components/ui/input';
+import { Label } from '@/components/ui/label';
+import { cn } from '@/lib/utils';
 import React, { ChangeEventHandler, useEffect, useRef, useState } from 'react';
-import { cn } from '../../../lib/utils';
-import { Input } from '../../ui/input';
-import { Label } from '../../ui/label';
 
 interface Props {
   className?: string;
@@ -46,8 +46,6 @@ export const InputGroup: React.FC<Props> = ({
     if (suffixRef.current) {
       setSuffixWidth(suffixRef.current.offsetWidth);
     }
-
-    console.log('prefixWidth', prefixWidth);
   }, [prefix, suffix]);
 
   return (

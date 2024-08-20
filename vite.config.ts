@@ -1,4 +1,5 @@
 import viteReact from '@vitejs/plugin-react';
+import path from 'path';
 import { defineConfig } from 'vite';
 import eslint from 'vite-plugin-eslint';
 
@@ -6,9 +7,9 @@ import eslint from 'vite-plugin-eslint';
 export default defineConfig({
   plugins: [viteReact(), eslint()],
   resolve: {
-    // alias: {
-    //   '@': path.resolve(__dirname, './src'),
-    // },
+    alias: {
+      '@': path.resolve(__dirname, './src'),
+    },
   },
   server: {
     port: 3000,
