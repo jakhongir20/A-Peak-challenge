@@ -1,10 +1,11 @@
 import { DarkModeProvider } from './context';
-import Home from './pages/Home';
+import { CartPage, HomePage } from './pages';
 
 export default function App() {
   return (
     <DarkModeProvider>
-      <Home />
+      <HomePage />
+      <CartPage />
     </DarkModeProvider>
   );
 }
